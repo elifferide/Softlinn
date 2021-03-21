@@ -325,10 +325,14 @@
                 <h4>JOIN OUR NEWSLETTER</h4>
                         </div>
                         <div class="col-lg-5">
-                            <form action="#">
-                                <input type="email" placeholder="Your Email" class="form-control" name="email">
-                                <button type="submit"> <i class="fa fa-paper-plane"></i></button>
+                            <form id="news" target="response-news" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScWdiOSh2mSf0D-y43hxn8N793Rn4T2obzI8tMyVks9Wwn4qA/formResponse" method="POST" >
+                                <input id="newsinput" type="email" placeholder="Your Email" class="form-control" name="entry.466696956">
+                                <button name="submit" type="submit"> <i class="fa fa-paper-plane"></i></button>
                             </form>
+                            <div class="text-center pt-2" id="news-msg" style="display:none;">
+                              <p class="text-light"> <i class="text-success pr-2 fas fa-check"></i>Your E-mail address is added.</p>
+                            </div>
+                        <iframe class="invisible" id="response-news" name="response-news" height="1"></iframe>
                         </div>
                     </div>
                 </div>
@@ -437,7 +441,24 @@
         <!-- End Footer Bottom -->
     </footer>
     <!-- End Footer -->
+    <!--Newsletter-->
+    <script type="text/javascript">
+            document.getElementById('news').target = 'response-news';
+            var iframenews = document.getElementById('response-news');
+            var newsmsg=document.getElementById("news-msg");
+            newsmsg.style.display="none";
+            if (iframenews) {
 
+               iframenews.onload = function () {
+                 document.getElementById('news').onsubmit=function(){
+                   newsmsg.style.display="block";
+                 }
+                 document.getElementById("newsinput").value="";
+                 setTimeout(function(){newsmsg.style.display="none"; }, 2000);
+              }
+            }
+
+    </script>
     <!-- jQuery Frameworks
     ============================================= -->
     <script src="assets/js/jquery-1.12.4.min.js"></script>

@@ -188,7 +188,7 @@
 
     <!-- Start Breadcrumb
     ============================================= -->
-    <div class="breadcrumb-area text-center shadow dark bg-fixed text-light" style="background-image: url(assets/img/contact.jpg);">
+    <div class="breadcrumb-area text-center shadow dark bg-fixed text-light" style="background-image: url(assets/img/c2.jpg);">
         <div class="container">
             <div class="row pt-5">
                 <div class="col-lg-12">
@@ -202,11 +202,11 @@
 
     <!-- Start Contact Area
     ============================================= -->
-    <div class="contact-area bg-gray default-padding">
+    <div class="contact-area bg-gray half-bg default-padding-bottom pt-5">
         <div class="container">
             <div class="contact-box">
-                <div class="row align-center">
-                    <div class="col-lg-5 left-info">
+                <div class="row">
+                    <div class="col-lg-5 left-info pt-5 ">
                         <div class="item">
                             <div class="icon">
                                 <i class="fas fa-map-marked-alt"></i>
@@ -236,7 +236,7 @@
                             <div class="info">
                                 <h5>Email</h5>
                                 <p>
-                                    info@softlinn.com <br>admin@softlinn.com
+                                    info@softlinn.com
                                 </p>
                             </div>
                         </div>
@@ -247,17 +247,17 @@
                                 <h2>Need Help?</h2>
                                 <p>Reach out to the world’s most reliable IT services.</p>
                             </div>
-                            <form action="assets/mail/contact.php" method="POST" class="contact-form">
+                            <form id="my-form" target="my-response-iframe"  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdW8ziB94YsZOa5hcWwcFLFZNjffKR_Lvs3TInSnGi54EVmMw/formResponse" method="POST" >
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="name" name="name" placeholder="Name" type="text">
+                                            <input id="name" class="form-control"  name="entry.543927495" placeholder="Name" type="text">
                                             <span class="alert-error"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="email" name="email" placeholder="Email*" type="email">
+                                            <input class="form-control"  id="email" name="entry.1507410337" placeholder="Email*" type="email">
                                             <span class="alert-error"></span>
                                         </div>
                                     </div>
@@ -265,7 +265,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <input class="form-control" id="phone" name="phone" placeholder="Phone" type="text">
+                                            <input class="form-control"  id="phone" name="entry.274539470" placeholder="Phone" type="text">
                                             <span class="alert-error"></span>
                                         </div>
                                     </div>
@@ -273,7 +273,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group comments">
-                                            <textarea class="form-control" id="comments" name="comments" placeholder="Please describe what you need."></textarea>
+                                            <textarea class="form-control" id="comments" name="entry.2041041568" placeholder="Please describe what you need."></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -285,21 +285,24 @@
                                     </div>
                                 </div>
                                 <!-- Alert Message -->
-                                <div class="col-md-12 alert-notification">
-                                    <div id="message" class="alert-msg"></div>
+                                <div class="col-md-12 " id="alertmsg" style="display:none;">
+                                    <div class="alert mt-2 p-2 rounded">
+                                      <p>Thank you, your message has been submitted to us.</p>
+
+                                    </div>
+
                                 </div>
                             </form>
                         </div>
+
+                        <iframe class="invisible" id="my-response-iframe" name="my-response-iframe" height="1"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Contact Area -->
-<div class="form-project text-center pt-4">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCif7YbU4-s--cxc47cl0-ZppiaUXf_eETOhbwnQO_i_-jig/viewform?embedded=true" width="640" height="1643" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe>
 
-</div>
   <!-- Start Footer
     ============================================= -->
     <footer class="bg-dark text-light">
@@ -318,10 +321,14 @@
                 <h4>JOIN OUR NEWSLETTER</h4>
                         </div>
                         <div class="col-lg-5">
-                            <form action="#">
-                                <input type="email" placeholder="Your Email" class="form-control" name="email">
-                                <button type="submit"> <i class="fa fa-paper-plane"></i></button>
+                            <form id="news" target="response-news" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScWdiOSh2mSf0D-y43hxn8N793Rn4T2obzI8tMyVks9Wwn4qA/formResponse" method="POST" >
+                                <input id="newsinput" type="email" placeholder="Your Email" class="form-control" name="entry.466696956">
+                                <button name="submit" type="submit"> <i class="fa fa-paper-plane"></i></button>
                             </form>
+                            <div class="text-center pt-2" id="news-msg" style="display:none;">
+                              <p class="text-light"> <i class="text-success pr-2 fas fa-check"></i>Your E-mail address is added.</p>
+                            </div>
+                        <iframe class="invisible" id="response-news" name="response-news" height="1"></iframe>
                         </div>
                     </div>
                 </div>
@@ -430,7 +437,44 @@
         <!-- End Footer Bottom -->
     </footer>
     <!-- End Footer -->
+    <!--Contact Form-newsletter-->
 
+    <script type="text/javascript">
+            document.getElementById('my-form').target = 'my-response-iframe';
+            document.getElementById('news').target = 'response-news';
+            var iframe = document.getElementById('my-response-iframe');
+            var iframenews = document.getElementById('response-news');
+            var msg =document.getElementById("alertmsg");
+            msg.style.display="none";
+            var newsmsg=document.getElementById("news-msg");
+            newsmsg.style.display="none";
+
+            if (iframe) {
+
+               iframe.onload = function () {
+                 document.getElementById('my-form').onsubmit=function(){
+                   msg.style.display="block";
+                 }
+               document.getElementById("name").value="";
+               document.getElementById("email").value="";
+               document.getElementById("phone").value="";
+               document.getElementById("comments").value="";
+               setTimeout(function(){msg.style.display="none"; }, 3000);
+
+              }
+            }
+            if (iframenews) {
+
+               iframenews.onload = function () {
+                 document.getElementById('news').onsubmit=function(){
+                   newsmsg.style.display="block";
+                 }
+                 document.getElementById("newsinput").value="";
+                 setTimeout(function(){newsmsg.style.display="none"; }, 3000);
+              }
+            }
+
+    </script>
     <!-- jQuery Frameworks
     ============================================= -->
     <script src="assets/js/jquery-1.12.4.min.js"></script>

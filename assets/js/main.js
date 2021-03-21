@@ -1,10 +1,4 @@
-/* ===================================================================
-    
-    Author          : Valid Theme
-    Template Name   : Solion - IT Solutions Template
-    Version         : 1.0
-    
-* ================================================================= */
+
 
 (function($) {
     "use strict";
@@ -23,13 +17,13 @@
             live: true // act on asynchronously loaded content (default is true)
         });
         wow.init();
-        
+
 
         /* ==================================================
             # Tooltip Init
         ===============================================*/
-        $('[data-toggle="tooltip"]').tooltip(); 
-        
+        $('[data-toggle="tooltip"]').tooltip();
+
 
         /* ==================================================
             # Smooth Scroll
@@ -399,6 +393,12 @@
                 return false;
             });
         });
+
+      
+
+
+
+
 
     }); // end document ready function
 })(jQuery); // End jQuery
