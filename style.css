@@ -3861,7 +3861,7 @@ body,
      # Fun Ractor
 =================================================================== */
 
-.fun-fact-area .fun-fact-items .counter {
+."fun-fact-area" .fun-fact-items .counter {
   position: relative;
   display: flex;
   align-items: center;
